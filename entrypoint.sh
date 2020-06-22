@@ -35,7 +35,7 @@ if [ ! -z "${INPUT_FORCE}" ]; then
 fi
 
 # Export directory is not optional, relative to GITHUB_WORKSPACE so on host
-COMMAND="${COMMAND} ${GITHUB_WORKSPACE}/${INPUT_EXPORT_DIR}"
+COMMAND="${COMMAND} --type static-web ${GITHUB_WORKSPACE}/${INPUT_EXPORT_DIR}"
 echo "${COMMAND}"
 
 ${COMMAND}
