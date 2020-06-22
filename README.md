@@ -5,7 +5,16 @@
 If you have a [research software encyclopedia](https://github.com/rseng/rse)
 flat file "database" stored in a version controlled repository, you might want
 to export a web interface to GitHub pages for users to explore it. This is
-the purpose of this action.
+the purpose of this action. The portal currently looks like this:
+
+![img/home.png](img/home.png)
+
+And a repository like this:
+
+![img/repo.png](img/repo.png)
+
+An automated generation at [rseng/software](https://github.com/rseng/software) can
+be viewed [here](https://rseng.github.io/software/).
 
 ## Quick Start
 
@@ -27,7 +36,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
       - name: Generate Static Web
-        uses: rseng/rse-action@master
+        uses: rseng/rse-action@0.0.1
         with:        
           repo: https://github.com/rseng/software
           config: rse.ini
@@ -42,4 +51,11 @@ jobs:
 
 See [examples](examples) for this file and others with more detailed comments.
 
-**under development**
+## Inputs
+
+| name     | description                                        | default | required |
+|----------|----------------------------------------------------|---------|----------|
+|repo      | If defined, clone repository url first             | unset   | no       |
+|config    | path to rse.ini config file to discover repository.| rse.ini | no       |
+|export_dir| path to export directory.                          | docs/   | no       |
+|force     | If export directory exists, force overwrite.       | unset (false)| no  |
