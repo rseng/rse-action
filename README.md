@@ -51,6 +51,9 @@ jobs:
 
 See [examples](examples) for this file and others with more detailed comments.
 
+**important** you must define a **prefix** if you want to export to a GitHub
+pages that isn't served at an organizations primary GitHub pages.
+
 ## Inputs
 
 | name     | description                                        | default | required |
@@ -59,3 +62,4 @@ See [examples](examples) for this file and others with more detailed comments.
 |config    | path to rse.ini config file to discover repository.| rse.ini | no       |
 |export_dir| path to export directory.                          | docs/   | no       |
 |force     | If export directory exists, force overwrite.       | unset (false)| no  |
+|prefix    | A prefix for static export (for GitHub pages)      | /       | no  |

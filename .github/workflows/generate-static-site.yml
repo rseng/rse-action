@@ -24,3 +24,19 @@ jobs:
         with:
           name: static-web
           path: docs/
+
+      - name: Generate Static Web with Prefix
+        uses: ./
+        with:        
+          repo: https://github.com/rseng/software
+          config: rse.ini
+          export_dir: prefix
+          force: true
+          prefix: software
+      - name: List generated content
+        run: ls
+      - name: Upload data as artifact
+        uses: actions/upload-artifact@v2-preview
+        with:
+          name: static-web-prefix
+          path: prefix/

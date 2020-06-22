@@ -34,6 +34,12 @@ if [ ! -z "${INPUT_FORCE}" ]; then
     COMMAND="${COMMAND} --force"
 fi
 
+# A url prefix can be defined to export for some GitHub pages prefix
+if [ ! -z "${INPUT_PREFIX}" ]; then
+    printf "Prefix: ${INPUT_PREFIX}\n"
+    export RSE_URL_PREFIX=${INPUT_PREFIX}
+fi
+
 # Export directory is not optional, relative to GITHUB_WORKSPACE so on host
 COMMAND="${COMMAND} --type static-web ${GITHUB_WORKSPACE}/${INPUT_EXPORT_DIR}"
 echo "${COMMAND}"
