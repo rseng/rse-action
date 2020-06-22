@@ -10,7 +10,9 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
     - name: Export site to docs/
-      uses: rseng/rse-action@0.0.1
+
+      # Important! Update to release https://github.com/rseng/rse-action/releases
+      uses: rseng/rse-action@master
       with:        
         config: rse.ini
         export_dir: docs

@@ -36,7 +36,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
       - name: Generate Static Web
-        uses: rseng/rse-action@0.0.1
+
+        # Important! Update to release https://github.com/rseng/rse-action/releases
+        uses: rseng/rse-action@master
         with:        
           repo: https://github.com/rseng/software
           config: rse.ini

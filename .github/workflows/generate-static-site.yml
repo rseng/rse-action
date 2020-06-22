@@ -24,6 +24,8 @@ jobs:
         with:
           name: static-web
           path: docs/
+      - name: Cleanup previous repository
+        run: rm -rf software/
 
       - name: Generate Static Web with Prefix
         uses: ./
@@ -32,7 +34,7 @@ jobs:
           config: rse.ini
           export_dir: prefix
           force: true
-          prefix: software
+          prefix: prefix
       - name: List generated content
         run: ls
       - name: Upload data as artifact
