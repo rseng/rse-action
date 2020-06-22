@@ -18,7 +18,7 @@ jobs:
           export_dir: docs
           force: true
       - name: List generated content
-        run: ls docs/
+        run: ls
       - name: Upload data as artifact
         uses: actions/upload-artifact@v2-preview
         with:
