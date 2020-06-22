@@ -36,7 +36,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
       - name: Generate Static Web
-        uses: rseng/rse-action@0.0.1
+
+        # Important! Update to release https://github.com/rseng/rse-action/releases
+        uses: rseng/rse-action@master
         with:        
           repo: https://github.com/rseng/software
           config: rse.ini
@@ -51,11 +53,15 @@ jobs:
 
 See [examples](examples) for this file and others with more detailed comments.
 
+**important** you must define a **prefix** if you want to export to a GitHub
+pages that isn't served at an organizations primary GitHub pages.
+
 ## Inputs
 
 | name     | description                                        | default | required |
 |----------|----------------------------------------------------|---------|----------|
-|repo      | If defined, clone repository url first             | unset   | no       |
+|repo      | repository url or relative path to root of repo.   | .       | no       |
 |config    | path to rse.ini config file to discover repository.| rse.ini | no       |
 |export_dir| path to export directory.                          | docs/   | no       |
 |force     | If export directory exists, force overwrite.       | unset (false)| no  |
+|prefix    | A prefix for static export (for GitHub pages)      | /       | no  |

@@ -8,6 +8,9 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
 inputs:
+  prefix:
+    description: >
+      If defined, set a prefix for the url to export (required for GitHub pages)
   repo:
     description: >
       If defined, clone repository url first

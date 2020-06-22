@@ -10,9 +10,14 @@ ls
 
 # define config file
 if [ ! -z "${INPUT_REPO}" ]; then
-    printf "Cloning ${INPUT_REPO}\n"
-    git clone "${INPUT_REPO}" software
-    cd software
+    if [ -d "${INPUT_REPO}" ]; then
+        printf "Found ${INPUT_REPO}\n"
+        cd ${INPUT_REPO}
+    else
+        printf "Cloning ${INPUT_REPO}\n"
+        git clone "${INPUT_REPO}" software
+        cd software
+   fi
 fi
 
 printf "Found files in repository:\n"
@@ -32,6 +37,12 @@ COMMAND="${COMMAND} export"
 # force overwrite?
 if [ ! -z "${INPUT_FORCE}" ]; then
     COMMAND="${COMMAND} --force"
+fi
+
+# A url prefix can be defined to export for some GitHub pages prefix
+if [ ! -z "${INPUT_PREFIX}" ]; then
+    printf "Prefix: ${INPUT_PREFIX}\n"
+    export RSE_URL_PREFIX=${INPUT_PREFIX}
 fi
 
 # Export directory is not optional, relative to GITHUB_WORKSPACE so on host
