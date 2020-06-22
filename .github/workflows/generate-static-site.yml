@@ -21,4 +21,4 @@ jobs:
         uses: actions/upload-artifact@v2-preview
         with:
           name: static-web
-          path: docs/*
+          path: software/docs/*
