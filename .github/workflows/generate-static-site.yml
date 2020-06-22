@@ -24,13 +24,11 @@ jobs:
         with:
           name: static-web
           path: docs/
-      - name: Cleanup previous repository
-        run: rm -rf software/
 
       - name: Generate Static Web with Prefix
         uses: ./
         with:        
-          repo: https://github.com/rseng/software
+          repo: software
           config: rse.ini
           export_dir: prefix
           force: true

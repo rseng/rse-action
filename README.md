@@ -60,7 +60,7 @@ pages that isn't served at an organizations primary GitHub pages.
 
 | name     | description                                        | default | required |
 |----------|----------------------------------------------------|---------|----------|
-|repo      | If defined, clone repository url first             | unset   | no       |
+|repo      | repository url or relative path to root of repo.   | .       | no       |
 |config    | path to rse.ini config file to discover repository.| rse.ini | no       |
 |export_dir| path to export directory.                          | docs/   | no       |
 |force     | If export directory exists, force overwrite.       | unset (false)| no  |
