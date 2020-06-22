@@ -2,6 +2,12 @@
 
 set -e
 
+# Have the GitHub workspace be the $PWD.
+cd "${GITHUB_WORKSPACE}"
+
+printf "Found files in workspace:\n"
+ls
+
 # define config file
 if [ ! -z "${INPUT_REPO}" ]; then
     printf "Cloning ${INPUT_REPO}\n"
@@ -9,7 +15,7 @@ if [ ! -z "${INPUT_REPO}" ]; then
     cd software
 fi
 
-printf "Found files in workspace:\n"
+printf "Found files in repository:\n"
 ls
 
 printf "Looking for rse install...\n"
@@ -17,10 +23,8 @@ which rse
 
 COMMAND="rse"
 
-# define config file
-if [ ! -z "${INPUT_CONFIG}" ]; then
-    COMMAND="${COMMAND} --config_file ${INPUT_CONFIG}"
-fi
+# define config file, needs to be same for server start and export
+export RSE_CONFIG_FILE=${INPUT_CONFIG}
 
 # Now we are at export level args
 COMMAND="${COMMAND} export"
@@ -30,8 +34,8 @@ if [ ! -z "${INPUT_FORCE}" ]; then
     COMMAND="${COMMAND} --force"
 fi
 
-# Export directory is not optional
-COMMAND="${COMMAND} ${INPUT_EXPORT_DIR}"
+# Export directory is not optional, relative to GITHUB_WORKSPACE so on host
+COMMAND="${COMMAND} --type static-web ${GITHUB_WORKSPACE}/${INPUT_EXPORT_DIR}"
 echo "${COMMAND}"
 
 ${COMMAND}

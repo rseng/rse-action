@@ -37,9 +37,9 @@ jobs:
         uses: actions/upload-artifact@v2-preview
         with:
           name: static-web
-          path: docs/*
+          path: docs/
 ```
 
-See [examples](examples) for this file and others.
+See [examples](examples) for this file and others with more detailed comments.
 
 **under development**
