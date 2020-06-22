@@ -1,0 +1,24 @@
+name: generate-web
+
+on:
+  pull_request: []
+
+jobs:
+  GenerateStaticWeb:
+    name: Generate static web
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Generate Static Web
+        uses: rseng/rse-action@master
+        with:        
+          repo: https://github.com/rseng/software
+          config: rse.ini
+          export_dir: docs
+          force: true
+      - name: Upload data as artifact
+        uses: actions/upload-artifact@v2-preview
+        with:
+          name: static-web
+          path: docs/*

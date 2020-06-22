@@ -1,0 +1,24 @@
+name: 'Research Software Encyclopedia Web Exporter'
+description: 'A GitHub action to export static files for a research software encyclopedia.'
+author: 'vsoch'
+branding:
+  icon: 'link-2'  
+  color: 'blue'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+inputs:
+  repo:
+    description: >
+      If defined, clone repository url first
+  config:
+    description: >
+      path to rse.ini config file to discover repository.
+    default: rse.ini
+  export_dir:
+    description: >
+      path to export directory.
+    default: docs/
+  force:
+    description: >
+      If export directory exists, force overwrite.
