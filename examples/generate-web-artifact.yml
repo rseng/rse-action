@@ -32,4 +32,4 @@ jobs:
         # Path is relative to GITHUB_WORKSPACE
         with:
           name: static-web
-          path: docs/*
+          path: docs/

@@ -18,9 +18,9 @@ jobs:
           export_dir: docs
           force: true
       - name: List generated content
-        run: ls "${PWD}"
+        run: ls docs/
       - name: Upload data as artifact
         uses: actions/upload-artifact@v2-preview
         with:
           name: static-web
-          path: docs
+          path: docs/
