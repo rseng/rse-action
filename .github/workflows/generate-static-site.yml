@@ -11,7 +11,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
       - name: Generate Static Web
-        uses: .
+        uses: ./
         with:        
           repo: https://github.com/rseng/software
           config: rse.ini
