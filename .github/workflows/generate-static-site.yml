@@ -17,8 +17,10 @@ jobs:
           config: rse.ini
           export_dir: docs
           force: true
+      - name: List generated content
+        run: ls "${PWD}"
       - name: Upload data as artifact
         uses: actions/upload-artifact@v2-preview
         with:
           name: static-web
-          path: software/docs/*
+          path: docs/*

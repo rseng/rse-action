@@ -34,8 +34,8 @@ if [ ! -z "${INPUT_FORCE}" ]; then
     COMMAND="${COMMAND} --force"
 fi
 
-# Export directory is not optional
-COMMAND="${COMMAND} ${INPUT_EXPORT_DIR}"
+# Export directory is not optional, relative to GITHUB_WORKSPACE so on host
+COMMAND="${COMMAND} ${GITHUB_WORKSPACE}/${INPUT_EXPORT_DIR}"
 echo "${COMMAND}"
 
 ${COMMAND}

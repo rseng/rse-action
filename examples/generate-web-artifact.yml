@@ -13,12 +13,23 @@ jobs:
       - name: Generate Static Web
         uses: rseng/rse-action@master
         with:        
+
+          # Clone this repository to the GitHub workspace to use
           repo: https://github.com/rseng/software
+
+          # This file should be in the repository
           config: rse.ini
+
+          # Export to this subfolder of the repository or workspace
           export_dir: docs
+
+          # Overwrite if it exists
           force: true
+
       - name: Upload data as artifact
         uses: actions/upload-artifact@v2-preview
+
+        # Path is relative to GITHUB_WORKSPACE
         with:
           name: static-web
           path: docs/*

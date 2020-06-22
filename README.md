@@ -40,6 +40,6 @@ jobs:
           path: docs/*
 ```
 
-See [examples](examples) for this file and others.
+See [examples](examples) for this file and others with more detailed comments.
 
 **under development**
