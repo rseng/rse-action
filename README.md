@@ -14,7 +14,8 @@ And a repository like this:
 ![img/repo.png](img/repo.png)
 
 An automated generation at [rseng/software](https://github.com/rseng/software) can
-be viewed [here](https://rseng.github.io/software/).
+be viewed [here](https://rseng.github.io/software/). The interface also exports
+a static "API" so the repositories can be programatically obtained. See [https://rseng.github.io/software/data.json](https://rseng.github.io/software/data.json) for an example.
 
 ## Quick Start
 
