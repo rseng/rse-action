@@ -30,6 +30,7 @@ COMMAND="rse"
 
 # define config file, needs to be same for server start and export
 export RSE_CONFIG_FILE=${INPUT_CONFIG}
+export RSE_ISSUES_ENDPOINT=${INPUT_ISSUES_REPO}
 
 # Now we are at export level args
 COMMAND="${COMMAND} export"

@@ -59,10 +59,12 @@ pages that isn't served at an organizations primary GitHub pages.
 
 ## Inputs
 
-| name     | description                                        | default | required |
-|----------|----------------------------------------------------|---------|----------|
-|repo      | repository url or relative path to root of repo.   | .       | no       |
-|config    | path to rse.ini config file to discover repository.| rse.ini | no       |
-|export_dir| path to export directory.                          | docs/   | no       |
-|force     | If export directory exists, force overwrite.       | unset (false)| no  |
-|prefix    | A prefix for static export (for GitHub pages)      | /       | no  |
+| name      | description                                        | default | required |
+|-----------|----------------------------------------------------|---------|----------|
+|repo       | repository url or relative path to root of repo.   | .       | no       |
+|config     | path to rse.ini config file to discover repository.| rse.ini | no       |
+|export_dir | path to export directory.                          | docs/   | no       |
+|force      | If export directory exists, force overwrite.       | unset (false)| no  |
+|issues_repo| Repository to post taxonomy/criteria annotations   | https://github.com/rseng/software | no |
+|prefix     | A prefix for static export (for GitHub pages)      | /       | no  |
+
