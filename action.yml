@@ -18,6 +18,9 @@ inputs:
     description: >
       path to rse.ini config file to discover repository.
     default: rse.ini
+  issues_repo:
+    description: the repository basename to post taxonomy and criteria annotations
+    default: https://github.com/rseng/software
   export_dir:
     description: >
       path to export directory.
