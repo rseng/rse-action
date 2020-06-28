@@ -13,10 +13,18 @@ jobs:
 
       # Important! Update to release https://github.com/rseng/rse-action/releases
       uses: rseng/rse-action@master
-      with:        
+      with:
+
+        # The rse.ini config file, relative to the root of your repository
         config: rse.ini
+
+        # Export to docs and overwrite if exists
         export_dir: docs
         force: true
+
+        # Would be appropriate for github pages at https://rseng.github.io/software
+        prefix: software
+        host: https://rseng.github.io
 
     - name: Checkout New Branch
       env:

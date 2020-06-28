@@ -28,3 +28,7 @@ inputs:
   force:
     description: >
       If export directory exists, force overwrite.
+  host:
+    description: >
+      For the API view export, set the hostname (including port)
+

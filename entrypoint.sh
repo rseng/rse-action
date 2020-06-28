@@ -46,6 +46,12 @@ if [ ! -z "${INPUT_PREFIX}" ]; then
     export RSE_URL_PREFIX=${INPUT_PREFIX}
 fi
 
+# A hostname is needed for some api views
+if [ ! -z "${INPUT_HOST}" ]; then
+    printf "Host and optional port: ${INPUT_HOST}\n"
+    export RSE_HOST=${INPUT_HOST}
+fi
+
 # Export directory is not optional, relative to GITHUB_WORKSPACE so on host
 COMMAND="${COMMAND} --type static-web ${GITHUB_WORKSPACE}/${INPUT_EXPORT_DIR}"
 echo "${COMMAND}"
